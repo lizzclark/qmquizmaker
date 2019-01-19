@@ -1,0 +1,23 @@
+Make your quiz look a little something like this!
+Formatting rules:
+Questions are separated from each other with a double line-break
+Questions are numbered like so: (1), (2), (3)
+Possible answers are on a new line and are given lowercase letters, like so:
+a. 
+b. 
+c. 
+The possible answers are followed by "Ans:" and the correct answer's letter
+
+TEMPLATE QUIZ
+
+(1) What is the capital of France?
+a. Zeebrugge
+b. Nice
+c. Paris
+Ans: c
+
+(2) How many floors does the Empire State Building have?
+a. 102
+b. 202
+c. 302
+Ans: a
