@@ -1,0 +1,12 @@
+1) What is the capital of Germany?
+a. Hamburg
+b. Berlin
+c. Cologne
+Ans: b
+
+2) How many floors does the Empire State Building have?
+a. 102
+b. 202
+c. 302
+d. 402
+Ans: a
