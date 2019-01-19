@@ -31,11 +31,12 @@ function createQuiz(fileName) {
             JSON.stringify(questionsData)
           );
           // write full quiz code to file
-          fs.writeFile(`./${fileName}.js`, populatedString, err => {
+          const quizName = fileName.slice(0, -4);
+          fs.writeFile(`./${quizName}.js`, populatedString, err => {
             if (err) console.log(err);
             else
               console.log(
-                `Succesfully created your quiz! Run ${fileName}.js to play`
+                `Succesfully created your quiz! Run ${quizName}.js to play`
               );
           });
         }
