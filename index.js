@@ -20,7 +20,7 @@ fs.readdir("./", "utf8", (err, fileNames) => {
     inquirer.prompt(questions).then(answers => {
       // console log success, and call createQuiz function
       console.log(
-        `Creating this quiz: \n${answers["quiz-file-choice"].slice(0, -4)}`
+        `Creating this quiz: ${answers["quiz-file-choice"].slice(0, -4)}`
       );
       createQuiz(answers["quiz-file-choice"]);
     });

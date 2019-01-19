@@ -1,8 +1,49 @@
+const inquirer = require("inquirer");
+const fs = require("fs");
+const fse = require("fs-extra");
+
 function createQuiz(fileName) {
-  // asynchronously read file
-  // call writeQuizCode, a (synchronous) function which returns a string of quiz code with appropriate data inserted
-  // write an inquirer file containing that data
-  console.log("running createQuiz");
+  // read file and format data for inquirer
+  fse
+    .readFile(`./${fileName}`, "utf8")
+    .then(fileContents => {
+      const fileTextArray = fileContents.split("\n\n");
+      const questionObjects = fileTextArray.reduce((acc, questionText) => {
+        const lines = questionText.split("\n");
+        const correctAnswer = lines[lines.length - 1].slice(-1);
+        acc.push({
+          correctAnswer,
+          type: "list",
+          name: lines[0],
+          choices: lines.slice(1, lines.length - 1)
+        });
+        return acc;
+      }, []);
+      return questionObjects;
+    })
+    .then(questionsData => {
+      // replace placeholder with data in skeleton file
+      fs.readFile("./skeleton.txt", "utf8", (err, skeletonString) => {
+        if (err) console.log(err);
+        else {
+          const populatedString = skeletonString.replace(
+            "PLACEHOLDER",
+            JSON.stringify(questionsData)
+          );
+          // write full quiz code to file
+          fs.writeFile(`./${fileName}.js`, populatedString, err => {
+            if (err) console.log(err);
+            else
+              console.log(
+                `Succesfully created your quiz! Run ${fileName}.js to play`
+              );
+          });
+        }
+      });
+    })
+    .catch(err => {
+      console.log(err);
+    });
 }
 
 module.exports = createQuiz;

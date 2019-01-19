@@ -1,0 +1,17 @@
+const inquirer = require("inquirer");
+
+// array of question objects
+const questions = PLACEHOLDER;
+
+inquirer.prompt(questions).then(answers => {
+  const topScore = Object.keys(answers).length;
+  const totalScore = questions.reduce((acc, question) => {
+    const thisQuestion = question.name;
+    if (answers[thisQuestion][0] === question.correctAnswer) {
+      return acc + 1;
+    } else {
+      return acc;
+    }
+  }, 0);
+  console.log(`You scored ${totalScore} out of ${topScore}`);
+});
