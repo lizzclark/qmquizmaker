@@ -1,7 +1,7 @@
 const inquirer = require("inquirer");
 
 // array of question objects
-const questions = PLACEHOLDER1;
+const questions = [{"correctAnswerText":"a - London","type":"list","name":"1) What is the capital of England?","choices":["a - London","b - Gibraltar","c - Nottingham"]},{"correctAnswerText":"a - Madrid","type":"list","name":"2) What is the capital of Spain?","choices":["a - Madrid","b - Santander","c - Barcelona","d - Sevilla"]},{"correctAnswerText":"b - Lima","type":"list","name":"3) What is the capital of Peru?","choices":["a - Buenos Aires","b - Lima","c - Sao Paolo"]}];
 
 inquirer.prompt(questions).then(answers => {
   const markingInfo = questions.reduce(

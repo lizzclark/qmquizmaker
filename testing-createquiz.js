@@ -17,11 +17,9 @@ function createQuiz(fileName) {
         const lines = questionText.split("\n");
         const correctAnswer = lines[lines.length - 1].slice(-1);
         const correctAnswerText = lines.slice(1, -1).filter(line => {
-          console.log(line);
           return line[0] === correctAnswer;
         })[0];
         acc.push({
-          correctAnswer,
           correctAnswerText,
           type: "list",
           name: lines[0],

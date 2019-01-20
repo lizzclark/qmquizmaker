@@ -1,0 +1,22 @@
+## Capital Cities Quiz ##
+
+1) What is the capital of England?
+a - London
+b - Gibraltar
+c - Nottingham
+Ans: a
+
+2) What is the capital of Spain?
+a - Madrid
+b - Santander
+c - Barcelona
+d - Sevilla
+Ans: a
+
+3) What is the capital of Peru?
+a - Buenos Aires
+b - Lima
+c - Sao Paolo
+Ans: b
+
+## END ##
