@@ -1,0 +1,8 @@
+const inquirer = require("inquirer");
+
+// array of question objects
+const questions = PLACEHOLDER1;
+
+inquirer.prompt(questions).then(answers => {
+  console.log(answers);
+});

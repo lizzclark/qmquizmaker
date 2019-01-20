@@ -6,10 +6,11 @@ Formatting rules:
 - Your quiz must start with a title wrapped in double-hashes (##) and followed by a double line-break
 - Question blocks are separated from each other by a double line-break
 - You can optionally number your questions - this is best done with a bracket like "1)" or "(1)". Whether numbered or not, they will appear in the quiz in the same order as in your .txt file
-- Possible answers are on a new line and are given a key, like so:
+- There can be any number of possible answers. Each one is on a new line and has a key, like so:
 a. 
 b. 
-c.
+c. 
+d.
   
 OR
  
@@ -17,6 +18,7 @@ A)
 B)
 C)
 - The final line of a question block is "Ans:" and then the correct answer's key. (Essentially, the last character in this line must match the first character in the correct answer's line)
+- The last question of the quiz is followed by a double line-break and then "## END ##"
 
 ## TEMPLATE QUIZ ##
 
@@ -30,4 +32,7 @@ Ans: c
 a. 102
 b. 202
 c. 302
+d. 402
 Ans: a
+
+## END ##

@@ -1,4 +1,3 @@
-const inquirer = require("inquirer");
 const fs = require("fs");
 const fse = require("fs-extra");
 const child_process = require("child_process");
@@ -17,8 +16,13 @@ function createQuiz(fileName) {
       const questionObjects = fileTextArray.reduce((acc, questionText) => {
         const lines = questionText.split("\n");
         const correctAnswer = lines[lines.length - 1].slice(-1);
+        const correctAnswerText = lines.slice(1, -1).filter(line => {
+          console.log(line);
+          return line[0] === correctAnswer;
+        })[0];
         acc.push({
           correctAnswer,
+          correctAnswerText,
           type: "list",
           name: lines[0],
           choices: lines.slice(1, lines.length - 1)
@@ -30,7 +34,7 @@ function createQuiz(fileName) {
     .then(questionsData => {
       // populate skeleton file with our inquirer question objects
       fs.readFile(
-        `${__dirname}/skeleton.txt`,
+        `${__dirname}/testing-skeleton.txt`,
         "utf8",
         (err, skeletonString) => {
           if (err) console.log(err);
