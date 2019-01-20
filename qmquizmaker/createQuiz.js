@@ -1,6 +1,7 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const fse = require("fs-extra");
+const child_process = require("child_process");
 
 function createQuiz(fileName) {
   // read file and format data for inquirer
@@ -25,24 +26,38 @@ function createQuiz(fileName) {
     })
     .then(questionsData => {
       // populate skeleton file with our inquirer question objects
-      fs.readFile("./skeleton.txt", "utf8", (err, skeletonString) => {
-        if (err) console.log(err);
-        else {
-          const populatedString = skeletonString.replace(
-            "PLACEHOLDER1",
-            JSON.stringify(questionsData)
-          );
-          // write full quiz code to file
-          const quizName = fileName.slice(0, -4);
-          fs.writeFile(`./${quizName}.js`, populatedString, err => {
-            if (err) console.log(err);
-            else
-              console.log(
-                `Succesfully created your quiz! Run ${quizName}.js to play`
-              );
-          });
+      fs.readFile(
+        `${__dirname}/skeleton.txt`,
+        "utf8",
+        (err, skeletonString) => {
+          if (err) console.log(err);
+          else {
+            const populatedString = skeletonString.replace(
+              "PLACEHOLDER1",
+              JSON.stringify(questionsData)
+            );
+            // write full quiz code to file
+            const quizName = fileName.slice(0, -4);
+            fs.writeFile(
+              `${process.cwd()}/${quizName}.js`,
+              populatedString,
+              err => {
+                if (err) console.log(err);
+                // use child process to install inquirer in working directory
+                else
+                  child_process.exec(`npm i inquirer`, null, err => {
+                    if (err) console.log(err);
+                    else {
+                      console.log(
+                        `Succesfully created your quiz! Run ${quizName}.js to play`
+                      );
+                    }
+                  });
+              }
+            );
+          }
         }
-      });
+      );
     })
     .catch(err => {
       console.log(err);

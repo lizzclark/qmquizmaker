@@ -2,14 +2,13 @@
 
 A package that creates an interactive command-line quiz from a .txt file of questions and answers
 
-- You install, then run the command “qmquiz” in terminal
+- You install globally, then run the command “qmquiz” in terminal
 - You are prompted to select a .txt file from the working directory that contains your questions and answers (a template for this is included in the package)
 - QMQ creates a .js file which contains your quiz!
 
 ### Todo
 
 - Tidy up the project - a clear template to populate with your Qs and As, more fleshed-out README, delete archive
-- Global command line availability: add "#!/usr/bin/env/ node" to index.js and put the command "qmquiz" in bin
 
 ### Future features
 
