@@ -6,9 +6,11 @@ A package that creates an interactive command-line quiz from a .txt file of ques
 - You are prompted to select a .txt file from the working directory that contains your questions and answers (a template for this is included in the package)
 - QMQ creates a .js file which contains your quiz!
 
-### Todo
+### Template and Examples
 
-- Tidy up the project - a clear template to populate with your Qs and As, more fleshed-out README, delete archive
+- 'template.txt' contains an example quiz and an explanation of the formatting rules for the .txt files that QMQ will work on
+- The 'examples' folder contains some sample .txt files and the .js files that QMQ created from them.
+- Play my exciting German Facts quiz to give you a taster of what QMQ can do!
 
 ### Future features
 
