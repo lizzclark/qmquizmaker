@@ -1,4 +1,3 @@
-const inquirer = require("inquirer");
 const fs = require("fs");
 const fse = require("fs-extra");
 const child_process = require("child_process");
@@ -16,9 +15,12 @@ function createQuiz(fileName) {
       // make each question into an inquirer prompt object
       const questionObjects = fileTextArray.reduce((acc, questionText) => {
         const lines = questionText.split("\n");
-        const correctAnswer = lines[lines.length - 1].slice(-1);
+        const correctAnswerLetter = lines[lines.length - 1].slice(-1);
+        const correctAnswerText = lines.slice(1, -1).filter(line => {
+          return line[0] === correctAnswerLetter;
+        })[0];
         acc.push({
-          correctAnswer,
+          correctAnswerText,
           type: "list",
           name: lines[0],
           choices: lines.slice(1, lines.length - 1)
