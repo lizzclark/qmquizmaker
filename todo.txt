@@ -1,3 +1,10 @@
 USER TEST FEEDBACK
 
 TODO
+
+1. currently qmq breaks if your .txt file contains a . anywhere in your question block(s).
+For now I'll update the template to reflect this, but in future this could be handled.
+Medium term goal: 
+QMQ could iterate through and log 'found . character in a question block - your quiz will be buggy! Remove it and try again'
+Long term goal:
+QMQ could replace any dot in a question block with a placeholder, then change it back? Replace it with its ASCII or unicode value?

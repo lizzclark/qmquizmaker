@@ -18,6 +18,7 @@ A)
 B)
 C)
 - The final line of a question block is "Ans:" and then the correct answer's key. (Essentially, the last character in this line must match the first character in the correct answer's line)
+- NO DOTS - nowhere in a question block can you include a "."
 - The last question of the quiz is followed by a double line-break and then "## END ##"
 
 ## TEMPLATE QUIZ ##
