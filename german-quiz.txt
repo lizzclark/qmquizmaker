@@ -1,0 +1,16 @@
+This is my cool comment!
+
+## A GERMAN QUIZ ##
+
+1) What is the capital of Germany?
+a. Hamburg
+b. Cologne
+c. Berlin
+Ans: c
+
+2) How many colours feature on the German flag?
+a. 2
+b. 3
+c. 4
+d. 5
+Ans: b

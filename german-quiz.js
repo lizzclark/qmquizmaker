@@ -1,7 +1,7 @@
 const inquirer = require("inquirer");
 
 // array of question objects
-const questions = [{"correctAnswer":"b","type":"list","name":"1) What is the capital of Germany?","choices":["a. Hamburg","b. Berlin","c. Cologne"]},{"correctAnswer":"a","type":"list","name":"2) How many floors does the Empire State Building have?","choices":["a. 102","b. 202","c. 302","d. 402"]}];
+const questions = [{"correctAnswer":"c","type":"list","name":"1) What is the capital of Germany?","choices":["a. Hamburg","b. Cologne","c. Berlin"]},{"correctAnswer":"b","type":"list","name":"2) How many colours feature on the German flag?","choices":["a. 2","b. 3","c. 4","d. 5"]}];
 
 inquirer.prompt(questions).then(answers => {
   const topScore = Object.keys(answers).length;

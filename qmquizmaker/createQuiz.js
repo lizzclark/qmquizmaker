@@ -7,7 +7,9 @@ function createQuiz(fileName) {
   fse
     .readFile(`./${fileName}`, "utf8")
     .then(fileContents => {
-      const fileTextArray = fileContents.split("\n\n");
+      // remove comment and split questions into array
+      const fileTextArray = fileContents.split("##\n\n")[1].split("\n\n");
+      // make each question into an inquirer prompt object
       const questionObjects = fileTextArray.reduce((acc, questionText) => {
         const lines = questionText.split("\n");
         const correctAnswer = lines[lines.length - 1].slice(-1);
@@ -22,12 +24,12 @@ function createQuiz(fileName) {
       return questionObjects;
     })
     .then(questionsData => {
-      // replace placeholder with data in skeleton file
+      // populate skeleton file with our inquirer question objects
       fs.readFile("./skeleton.txt", "utf8", (err, skeletonString) => {
         if (err) console.log(err);
         else {
           const populatedString = skeletonString.replace(
-            "PLACEHOLDER",
+            "PLACEHOLDER1",
             JSON.stringify(questionsData)
           );
           // write full quiz code to file

@@ -1,2 +1,0 @@
-const inquirer = require('inquirer');
-const questions = [{"type":"list","name":"1) What is the capital of Germany?","choices":["a. Hamburg","b. Berlin","c. Cologne"]}{"type":"list","name":"2) How many floors does the Empire State Building have?","choices":["a. 102","b. 202","c. 302","d. 402"]}]]

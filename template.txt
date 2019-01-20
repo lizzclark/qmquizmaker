@@ -1,22 +1,30 @@
 Make your quiz look a little something like this!
+
 Formatting rules:
-Questions are separated from each other with a double line-break
-Questions are numbered like so: (1), (2), (3)
-Possible answers are on a new line and are given lowercase letters, like so:
+
+- You can optionally include a comment at the top of your file, above your quiz (just like this paragraph)
+- Your quiz must start with a title wrapped in double-hashes (##) and followed by a double line-break
+- Question blocks are separated from each other by a double line-break
+- You can number your questions however you want, or not at all if you prefer. They will appear in the quiz in the same order as in your .txt file
+- Possible answers are on a new line and are given a key, like so:
 a. 
 b. 
 c. 
-The possible answers are followed by "Ans:" and the correct answer's letter
+OR
+A)
+B)
+C)
+- The final line of the block is "Ans:" and then the correct answer's key. (Essentially, the last character in this line must match the first character in the correct answer's line)
 
-TEMPLATE QUIZ
+## TEMPLATE QUIZ ##
 
-(1) What is the capital of France?
-a. Zeebrugge
+1) What is the capital of France?
+a. Lyon
 b. Nice
 c. Paris
 Ans: c
 
-(2) How many floors does the Empire State Building have?
+2) How many floors does the Empire State Building have?
 a. 102
 b. 202
 c. 302
